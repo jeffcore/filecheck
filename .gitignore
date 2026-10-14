@@ -4,3 +4,5 @@ to-check/*
 checked/*
 !to-check/.gitkeep
 !checked/.gitkeep
+__pycache__/
+*.pyc
