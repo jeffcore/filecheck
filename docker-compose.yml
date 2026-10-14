@@ -1,0 +1,14 @@
+services:
+  scanner:
+    build: .
+    network_mode: none          # no network while scanning untrusted files
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 4g
+    pids_limit: 256
+    tmpfs:
+      - /work:size=4g,uid=10001,mode=700   # extraction scratch space
+    volumes:
+      - ./to-check:/input:rw
+      - ./checked:/output:rw

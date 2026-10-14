@@ -1,0 +1,6 @@
+.DS_Store
+# Never commit files being scanned or scan results
+to-check/*
+checked/*
+!to-check/.gitkeep
+!checked/.gitkeep
